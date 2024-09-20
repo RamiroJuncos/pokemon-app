@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import PlayerCard from "./components/PlayerCard";
-import Pikachu from "./assets/pikachu.png";
-import Onix from "./assets/onix.png";
+import Fondo from "./assets/woodbg.jpg"
 import { startGame } from "./utils/function";
+
 
 function App() {
   /*
@@ -26,19 +26,25 @@ function App() {
   }, [isPlaying]);
 
   return (
-    <div className="w-full h-full flex flex-wrap">
+    <div className="w-screen h-screen flex flex-wrap" style={{background:`url(${Fondo})` , backgroundSize:"cover",backgroundRepeat:"no-repeat", backgroundPosition:"center"}}>
       {isPlaying ? (
         <>
           <div className="w-1/3 h-3/4 border">
-            {player?<PlayerCard pokemon={player} />:false}
+            {player ? <PlayerCard pokemon={player} /> : false}
+            
           </div>
           <div className="w-1/3 h-1/4 border">Log</div>
           <div className="w-1/3 h-3/4 border">
-            {pc?<PlayerCard pokemon={pc} />:false}
+            {pc ? <PlayerCard pokemon={pc} /> : false}
           </div>
         </>
       ) : (
-        <button onClick={() => setIsPlaying(true)}>Start Game</button>
+        <div className="flex flex-auto">
+          <div className=" w-full h-40 text-3xl text-center bg-red-500 border border-red-700 text-gray-300 hover:bg-red-600 hover:border-red-500 hover:text-white">
+            <div>THE POKEMON GAME</div>
+            <button onClick={() => setIsPlaying(true)}>Start Game</button>
+          </div>
+        </div>
       )}
     </div>
   );
