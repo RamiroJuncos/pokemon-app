@@ -28,11 +28,33 @@ export function startGame(){
     return [player, pc]
 }
 
-export function attack(){}
+export function attack(ataque, defensa){}
 
-export function efectividad(){}
+export function efectividad(ataque, defensa){
+    if (ataque == "agua" && defensa == "fuego") {
+        return 3
+    }else if (ataque == "fuego" && defensa == "piedra"){
+        return 3
+    }else if (ataque == "piedra" && defensa == "electrico"){
+        return 3
+    }else if (ataque == "electrico" && defensa == "agua"){
+        return 3
+    }else if(ataque == defensa){
+        return 1
+    }else {
+        return 0.5
+    }
 
-export function suerte(){}
+}
+
+export function suerte(){
+    let rando = Math.random();
+    if (rando < 0.33) {
+        return 3
+    }else {
+        return 1
+    }
+}
 
 /* 
 ataque tipos de los pokemon,niveles,vida defensor
