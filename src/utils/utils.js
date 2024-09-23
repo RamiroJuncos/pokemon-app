@@ -2,6 +2,7 @@ import pikachuImg from "../assets/pikachu.png";
 import onixImg from "../assets/onix.png";
 import charmanderImg from "../assets/charmander.png";
 import squirtleImg from "../assets/squirtle.png"
+import magnemiteImg from "../assets/magnemite.png"
 
 export const pokemons = [
     {
@@ -32,6 +33,13 @@ export const pokemons = [
         type:"agua",
         color:"#000fff",
         mov:["placaje","hidrobomba","ventisca"]
+    },
+    {
+        img: magnemiteImg,
+        name:"magnemite",
+        type:"electrico",
+        color:"#686665",
+        mov:["placaje", "bomba iman", "bola voltio"]
     }
 ]
 

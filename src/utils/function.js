@@ -2,7 +2,6 @@ import { pokemons } from "./utils";
 
 function radomize(min,max){
     return Math.floor(Math.random() * (max - min + 1) ) + min;
-
 }
 
 export function startGame(){
@@ -29,6 +28,6 @@ export function startGame(){
     return [player, pc]
 }
 
-export function pauseGame(){
+export function attack(){
     //
 }

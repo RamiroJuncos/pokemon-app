@@ -4,17 +4,17 @@ function PlayerCard({ pokemon }) {
       className="rounded-lg"
       style={{
         border: `2px solid ${pokemon.color}`,
-        background: `linear-gradient(to bottom, #fff, ${pokemon.color})`,
+        background: `linear-gradient(to bottom, transparent, ${pokemon.color})`,
       }}
     >
       <div>
-        <img src={pokemon.img} alt="" />
+        <img src={pokemon.img} style={{filter:"drop-shadow(15px 5px 5px #000)"}} alt="" />
       </div>
       <div>{pokemon.name}</div>
       <div>Nivel:{pokemon.level}</div>
       <div>Vida:{pokemon.life}</div>
       <div>{pokemon.type}</div>
-      <div>{pokemon.mov}</div>
+      <div>{pokemon.mov[Math.floor(Math.random() * (pokemon.mov.length - 0 + 1) ) + 0]}</div>
       <div>
         <button
           disabled={!pokemon.isPlayer ? true : false}
