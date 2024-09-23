@@ -28,6 +28,30 @@ export function startGame(){
     return [player, pc]
 }
 
-export function attack(){
-    //
-}
+export function attack(){}
+
+export function efectividad(){}
+
+export function suerte(){}
+
+/* 
+ataque tipos de los pokemon,niveles,vida defensor
+FORMULA DE DAÑO:
+50 * nivelAtacante / nivelDefensor * efectividad * suerte
+
+la efectividad depende del tipo de pokemon
+efectivo = 3
+normal = 1
+no efectivo = 0.5
+agua > fuego
+fuego > piedra
+piedra > electrico
+electrico > agua
+
+suerte = 30% de posibilidades de triplicar el daño
+random 0 - 0.99
+random < 0.3 retorna 3
+retorna 1
+
+esto devuelve la vida del defensor despues del ataque
+*/
