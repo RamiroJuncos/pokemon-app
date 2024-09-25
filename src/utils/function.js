@@ -28,7 +28,6 @@ export function startGame(){
     return [player, pc]
 }
 
-export function attack(ataque, defensa){}
 
 export function efectividad(ataque, defensa){
     if (ataque == "agua" && defensa == "fuego") {
@@ -44,7 +43,7 @@ export function efectividad(ataque, defensa){
     }else {
         return 0.5
     }
-
+    
 }
 
 export function suerte(){
@@ -55,6 +54,18 @@ export function suerte(){
         return 1
     }
 }
+
+export function attack(ataque, defensa){
+    const suerte1 = suerte()
+    const efectividad1 = efectividad(ataque.type , defensa.type)
+    const danho = 50 * ataque.level / defensa.level * efectividad1 * suerte1 
+    return danho 
+}
+
+
+
+
+
 
 /* 
 ataque tipos de los pokemon,niveles,vida defensor
